@@ -14,7 +14,27 @@ router.get("/", function (req, res, next) {
         date: {
           $date: "2014-03-01T08:00:00Z",
         },
-      },
+      },{
+        _id: {
+          $oid: "6351b2495c51f679c2a372ab",
+        },
+        item: "def",
+        price: 10,
+        quantity: 2,
+        date: {
+          $date: "2014-03-01T08:00:00Z",
+        },
+      },{
+        _id: {
+          $oid: "6351b2495c51f679c2a372ac",
+        },
+        item: "ghi",
+        price: 10,
+        quantity: 2,
+        date: {
+          $date: "2014-03-01T08:00:00Z",
+        },
+      }
     ],
   });
 });

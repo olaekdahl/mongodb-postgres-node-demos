@@ -6,13 +6,12 @@ import "./App.css";
 const api = `http://localhost:3001/api`;
 
 function Sales() {
-  const [data, setData] = React.useState({ results: [] });
+  const [data, setData] = React.useState({ sales: [] });
 
   React.useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(api,);
+      const result = await axios.get(api);
       setData(result.data);
-      console.log(result.data);
     };
 
     fetchData();
@@ -22,11 +21,11 @@ function Sales() {
     <React.Fragment>
       <h1>Sales</h1>
       <ul>
-        {/* {data.result.map((item) => (
-          <li key={item}>
-            <a href={item}> {item}</a>
+        {data.sales.map((item, index) => (
+          <li key={item._id.$oid}>
+            <a href={item._id.$oid}> {item.item}</a>
           </li>
-        ))} */}
+        ))}
       </ul>
     </React.Fragment>
   );
