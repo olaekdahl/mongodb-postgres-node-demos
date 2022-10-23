@@ -12,14 +12,14 @@ use('demodb');
 // db.dropDatabase();
 
 //CREATE
-db.sales.insertOne({ 'item': 'abc', 'price': 10, 'quantity': 2, 'date': new Date('2014-03-01T08:00:00Z') })
+db.sales.insertOne({_id:10, 'item': 'abc', 'price': 10, 'quantity': 20, 'date': new Date('2014-03-01T08:00:00Z') })
 //READ
-db.sales.find();
 db.sales.find({'quantity' : 2});
+// db.sales.find({_id:1});
 //projection
 db.sales.find({'quantity' : 2},{_id : 1, quantity: 1 });
 //UPDATE
-db.sales.updateOne(
+db.sales.updateMany(
     { 'item': 'abc' },
     {$set: {'price': 15}}
 );

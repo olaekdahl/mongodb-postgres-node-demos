@@ -54,4 +54,4 @@ db.sales.aggregate([{
             salesPerson : "$employee_sales.name"
         } 
     }
-]).pretty();
+]);

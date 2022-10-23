@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./App.css";
 
-const api = `http://localhost:3001/api`;
+const api = `http://localhost:3002/api/v2/`;
 
 function Sales() {
   const [data, setData] = React.useState({ sales: [] });
@@ -22,8 +22,8 @@ function Sales() {
       <h1>Sales</h1>
       <ul>
         {data.sales.map((item, index) => (
-          <li key={item._id.$oid}>
-            <a href={item._id.$oid}> {item.item}</a>
+          <li key={item._id}>
+            <a href={item._id}> {item.item}</a>
           </li>
         ))}
       </ul>
