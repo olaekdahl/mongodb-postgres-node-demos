@@ -20,7 +20,7 @@ const getAllSales = async (callback) => {
     const salesCollection = db.collection("sales");
     const data = await salesCollection.find().toArray();
     callback(data);
-    console.log(data);
+    cleanup();
   } catch (error) {
     console.error(error);
     return error;
@@ -112,7 +112,8 @@ process.on("SIGTERM", cleanup);
 //-------------------------------------- TEST -------------------------------------
 // connect();
 // use dummy placeholder for callback function () => {}
-// getAllSales(()=>{});
+let processData = (data) => {console.log(data);}
+getAllSales(processData);
 // getSaleItem('abc');
 // const newItem = {
 //   item: "NEW",

@@ -14,17 +14,17 @@ use('demodb');
 //CREATE
 db.sales.insertOne({_id:10, 'item': 'abc', 'price': 10, 'quantity': 20, 'date': new Date('2014-03-01T08:00:00Z') })
 //READ
-db.sales.find({'quantity' : 2});
+db.sales.find({'quantity' : 20});
 // db.sales.find({_id:1});
 //projection
-db.sales.find({'quantity' : 2},{_id : 1, quantity: 1 });
+db.sales.find({'quantity' : 20},{_id : 1, quantity: 1 });
 //UPDATE
 db.sales.updateMany(
     { 'item': 'abc' },
     {$set: {'price': 15}}
 );
 //DELETE
-db.sales.deleteOne( { 'quantity': 2 } );
+db.sales.deleteOne( { 'quantity': 20 } );
 
 // Insert a few documents into the sales collection.
 db.sales.insertMany([
