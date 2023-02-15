@@ -4,15 +4,17 @@
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
 // Select the database to use.
-use('demodb');
+use('test');
 
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
 // db.sales.drop();
 // db.dropDatabase();
 
+db.sales.find();
+
 //CREATE
-db.sales.insertOne({_id:10, 'item': 'abc', 'price': 10, 'quantity': 20, 'date': new Date('2014-03-01T08:00:00Z') })
+db.sales.insertOne({_id:10, 'item': 'abc', 'price': 10, 'quantity': 2, 'date': new Date('2014-03-01T08:00:00Z') })
 //READ
 db.sales.find({'quantity' : 20});
 // db.sales.find({_id:1});

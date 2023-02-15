@@ -1,7 +1,8 @@
 var express = require("express");
 const { json } = require("express/lib/response");
 var router = express.Router();
-var dao = require("../../mongodb-dao");
+var mongodao = require("../../mongodb-dao");
+var postgresdao = require("../../postgres-dao");
 
 // test with static data
 router.get("/v1", function (req, res, next) {
@@ -39,7 +40,14 @@ router.get("/v1", function (req, res, next) {
 
 // use mongodb dao
 router.get("/v2", function (req, res, next) {
-  dao.getAllSales((data) => {
+  mongodao.getAllSales((data) => {
+    res.send({ "sales": data });
+  });
+});
+
+
+router.get("/v3", function (req, res, next) {
+  postgresdao.getAllSales((data) => {
     res.send({ "sales": data });
   });
 });

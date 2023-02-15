@@ -2,7 +2,7 @@ db.employees.find();
 
 db.employees.insertMany([
   { 'name': 'Ola' },
-  { 'name': 'Chris' }
+  { 'name': 'Rap' }
   ]);
 
 db.employees.updateOne(
@@ -11,7 +11,7 @@ db.employees.updateOne(
 );
 
 db.employees.updateOne(
-    { 'name': 'Chris' },
+    { 'name': 'Rap' },
     {$set: {'eid': 2}}
 );
 

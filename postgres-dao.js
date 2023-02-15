@@ -10,6 +10,7 @@ const pool = new Pool({
 const getAllSales = async (callback) => {
   try {
     pool.query("SELECT * FROM sales;", (error, results) => {
+      callback(results.rows);
       console.log(results.rows);
     });
   } catch (error) {

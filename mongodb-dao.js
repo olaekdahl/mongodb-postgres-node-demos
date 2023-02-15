@@ -4,7 +4,7 @@ const url = "mongodb://localhost:27017";
 const client = new MongoClient(url);
 const db = client.db("test");
 
-// get connetion info
+// get connection info
 async function connect() {
   try {
     const conn = await client.connect();
