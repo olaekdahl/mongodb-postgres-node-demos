@@ -1,19 +1,20 @@
 {
-  "name": "mdb",
-  "version": "0.0.0",
-  "private": true,
+  "name": "mongodb-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongodb-crud.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "mongodb": "^4.11.0",
-    "mongoose": "^6.9.0",
-    "morgan": "~1.9.1",
-    "pg": "^8.8.0"
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "mongodb": "^5.4.0",
+    "mongoose": "^7.1.1",
+    "pg": "^8.11.1"
   }
 }
