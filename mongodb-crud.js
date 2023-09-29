@@ -58,12 +58,12 @@ async function deleteDocument(id) {
 // USAGE
 async function main() {
   let insertedId = await createDocument();
-  await readDocuments();
-  await readOneDocument(insertedId);
-  await updateDocument(insertedId, { age: 35 });
-  await readDocuments();
-  await deleteDocument(insertedId);
-  await readDocuments();
+  // await readDocuments();
+  // await readOneDocument(insertedId);
+  // await updateDocument(insertedId, { age: 35 });
+  // await readDocuments();
+  // await deleteDocument(insertedId);
+  // await readDocuments();
 }
 
 main();
