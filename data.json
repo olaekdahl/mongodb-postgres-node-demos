@@ -1,0 +1,18 @@
+{
+    "_id": "651ac8a7f779a798f99a5369",
+    "user_id": "123",
+    "orders" :[
+        {
+            "order_id": 1,
+            "product_id": 123
+        },
+        {
+            "order_id": 2,
+            "product_id": 123
+        },
+        {
+            "order_id": 3,
+            "product_id": 123
+        }
+    ]
+}

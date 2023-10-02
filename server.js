@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
 const port = 3000; // You can change the port as needed
@@ -51,7 +51,7 @@ app.get('/read/:id', async (req, res) => {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(collectionName);
-    const document = await collection.findOne({ _id: id });
+    const document = await collection.findOne({ _id: new ObjectId(id) });
     console.log(document);
     client.close();
     if (document) {
