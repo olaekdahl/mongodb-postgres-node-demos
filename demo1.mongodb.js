@@ -28,6 +28,9 @@ db.sales.insertOne({
 
 db.sales.find({});
 
+db.sales.findOne({'_id': ObjectId("65b7f4da73ec47dc3af5d0d3")});
+db.sales.find({'_oid': "65b3c3863da59a599e7381d9"});
+
 // Insert many documents into the sales collection.
 db.sales.insertMany([
   { 'a': 'b', 'item': 'abc', 'price': 10, 'quantity': 2, 'date': new Date('2014-03-01T08:00:00Z') },
@@ -53,7 +56,7 @@ db.sales.insertOne({
 db.sales.find({});
 
 // Projections
-db.sales.find({}, {_id: 0, item: 1, price: 1});
+db.sales.find({}, {_id: 0, item: 1, price: 1, a: 1});
 
 //Find specific document using id
 db.sales.findOne({_id: ObjectId("649f0d1382b470d949e41a67")});
