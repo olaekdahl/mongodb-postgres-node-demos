@@ -1,9 +1,10 @@
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
+import { MongoClient, ObjectId } from 'mongodb';
 const url = 'mongodb://localhost:27017';
 const dbName = 'demodb';
 const collectionName = 'crud';
 
-// CREATE
+// CREATE EXAMPLE
 async function createDocument() {
   const client = await MongoClient.connect(url);
   const db = client.db(dbName);
@@ -58,12 +59,12 @@ async function deleteDocument(id) {
 // USAGE
 async function main() {
   let insertedId = await createDocument();
-  // await readDocuments();
-  // await readOneDocument(insertedId);
-  // await updateDocument(insertedId, { age: 35 });
-  // await readDocuments();
-  // await deleteDocument(insertedId);
-  // await readDocuments();
+  await readDocuments();
+  await readOneDocument(insertedId);
+  await updateDocument(insertedId, { age: 35 });
+  await readDocuments();
+  await deleteDocument(insertedId);
+  await readDocuments();
 }
 
 main();
