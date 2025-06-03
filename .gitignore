@@ -2,3 +2,8 @@ node_modules/
 build
 npm-debug.log
 .DS_Store
+*.pem
+*.key
+*.csr
+*.srl
+*.crt
