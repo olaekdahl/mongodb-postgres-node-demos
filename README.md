@@ -32,3 +32,43 @@ sudo mongod \
   --bind_ip 127.0.0.1 \
   --port 27017
 ````
+
+````bash
+sudo mongod --dbpath ~/data/db
+````
+
+````bash
+mongosh --host localhost
+use demo
+db.demo.insertOne({ name: "alice", password: "superSecret123" })
+````
+
+````bash
+use admin
+db.createUser({
+  user:  "mdbRoot",
+  pwd:   "S3cure#PW",
+  roles: [ { role: "root", db: "admin" } ]
+})
+````
+
+````bash
+use securedb 
+db.createUser({
+  user:  "appUser",
+  pwd:   "Str0ngPW!",
+  roles: [
+     { role: "read", db: "securedb" },
+  ]
+})
+````
+
+````bash
+sudo tshark -i lo -a duration:60 -d tcp.port==27017,mongo -w /tmp/mongo-cleartext.pcapng
+````
+
+````bash
+sudo tshark -r /tmp/mongo-cleartext.pcapng -Y 'tcp.port == 27017' -d tcp.port==27017,mongo -O mongo
+| less -R
+````
+
