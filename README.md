@@ -34,6 +34,10 @@ sudo mongod \
 ````
 
 ````bash
+mongosh "mongodb://localhost:27017" --tls --tlsCAFile ./mongo-certs/ca.pem --tlsCertificateKeyFile ./mongo-certs/mongo.pem
+````
+
+````bash
 sudo mongod --dbpath ~/data/db
 ````
 
@@ -68,7 +72,6 @@ sudo tshark -i lo -a duration:60 -d tcp.port==27017,mongo -w /tmp/mongo-cleartex
 ````
 
 ````bash
-sudo tshark -r /tmp/mongo-cleartext.pcapng -Y 'tcp.port == 27017' -d tcp.port==27017,mongo -O mongo
-| less -R
+sudo tshark -r /tmp/mongo-cleartext.pcapng -Y 'tcp.port == 27017' -d tcp.port==27017,mongo -O mongo | less -R
 ````
 
